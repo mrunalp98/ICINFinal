@@ -2,6 +2,7 @@ package com.icin.service;
 
 import java.util.List;
 
+import com.icin.model.PrimaryAccount;
 import com.icin.model.Transaction;
 
 
@@ -24,4 +25,6 @@ public interface TransactionService {
      * @param transaction - Container object which stores details regarding transaction
      */
     public void transferMoney(Transaction transaction);
+    
+    public int retreiveAccountNumber(Long id);
 }

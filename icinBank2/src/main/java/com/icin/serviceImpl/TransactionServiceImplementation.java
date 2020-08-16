@@ -1,6 +1,5 @@
 package com.icin.serviceImpl;
 
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -62,5 +61,14 @@ public class TransactionServiceImplementation implements TransactionService{
         primaryAccountDao.save(destinationAccount.get());
 
     }
+
+	@Override
+	public int retreiveAccountNumber(Long id) {
+		Optional<PrimaryAccount> account =  primaryAccountDao.findById(id);
+		int accNo = account.get().getAccountNumber();
+		return accNo;
+	}
+    
+    
 
 }
